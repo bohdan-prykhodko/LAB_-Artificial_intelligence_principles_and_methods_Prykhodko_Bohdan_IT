@@ -77,7 +77,95 @@ label ∈ {0, 1}, confidence ∈ [0, 1]
 - у GUI передбачено переклад українського тексту ➜ англійською
 - для моделей CNN/BERT використовується розбиття довгих текстів на **чанки**
 
+## Структура репозиторію
 
+```text
+Project_AI_Phishing_Detector/
+├── data/
+│   └── phishing_dataset_bert.csv
+│
+├── models/
+│   ├── logreg_model/
+│   │   ├── model.pkl
+│   │   └── tfidf.pkl
+│   │
+│   ├── cnn_model/
+│   │   ├── model.h5
+│   │   └── tokenizer.pkl
+│   │
+│   └── bert_model/
+│       ├── config.json
+│       ├── tokenizer.json
+│       └── pytorch_model.bin
+│
+├── src/
+│   ├── logistic_regression.py
+│   ├── CNN.py
+│   ├── bert.py
+│   └── gui.py
+│
+├── metrics/
+│   ├── logreg_metrics.json
+│   ├── cnn_metrics.json
+│   └── bert_metrics.json
+│
+├── docs/
+│   └── AI_prez_prykhodko.pdf
+│
+├── README.md
+└── .gitignore
+```
+## Реалізація модулів
+
+src/logistic_regression.py — реалізація базового класифікатора Logistic Regression на TF-IDF ознаках.
+
+src/CNN.py — реалізація згорткової нейромережі для текстової класифікації (Text CNN).
+
+src/bert.py — використання попередньо натренованої моделі BERT для класифікації листів.
+
+src/gui.py — графічний інтерфейс користувача (CustomTkinter):
+• можливість введення тексту та аналізу в один клік  
+• підтримка української мови (автоматичний переклад ➜ англійською)  
+• обробка довгих листів через розбиття на чанки  
+
+metrics/*.json — збережені метрики якості для порівняння моделей.
+
+docs/AI_prez_prykhodko.pdf — презентація до проєкту.
+
+## Встановлення
+
+Створити та активувати віртуальне середовище:
+
+### Windows:
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+Linux / macOS:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+Встановити залежності:
+```bash
+pip install -r requirements.txt
+```
+Logistic Regression:
+```bash
+python src/logistic_regression.py
+```
+Text CNN:
+```bash
+python src/CNN.py
+```
+BERT:
+```bash
+python src/bert.py
+```
+Запуск GUI:
+```bash
+python src/gui.py
+```
 
 
 
