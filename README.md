@@ -1,0 +1,1 @@
+# LAB_-Artificial_intelligence_principles_and_methods_Prykhodko_Bohdan_IT
