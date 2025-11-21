@@ -1,0 +1,10 @@
+{
+    "model": "Logistic Regression",
+    "accuracy": 0.9835813237557722,
+    "precision": 0.9750231267345051,
+    "recall": 0.9952785646836638,
+    "f1": 0.9850467289719627,
+    "dataset": "phishing_dataset_bert.csv",
+    "test_size": 0.1,
+    "timestamp": "2025-11-21 03:11:55"
+}

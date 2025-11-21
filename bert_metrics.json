@@ -1,0 +1,14 @@
+{
+    "model": "final_bert_phishing2",
+    "accuracy": 0.9984607491021037,
+    "precision": 0.999054820415879,
+    "recall": 0.9981114258734656,
+    "f1": 0.9985829003306566,
+    "eval_loss": 0.008694262243807316,
+    "dataset": "phishing_dataset_bert.csv",
+    "test_size": 0.10,
+    "epoch": 5,
+    "eval_runtime_sec": 250.9052,
+    "samples_per_second": 7.768,
+    "steps_per_second": 0.243
+}
