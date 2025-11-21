@@ -201,6 +201,37 @@ python src/gui.py
 - Для кожної моделі виконано оцінку якості:
   • Accuracy, Precision, Recall, F1-score  
   • метрики збережено у форматі JSON для подальшого порівняння
+  
+## Результати 
+
+| Модель              | Accuracy | Precision | Recall | F1-score |
+| ------------------- | :------: | :-------: | :----: | :------: |
+| Logistic Regression |  0.9836  |   0.9750  | 0.9953 |  0.9850  |
+| Text CNN            |  0.9785  |   0.9652  | 0.9962 |  0.9805  |
+| BERT Transformer    |  0.9985  |   0.9991  | 0.9981 |  0.9986  |
+
+• BERT показує найвищу точність та F1-score — модель добре узагальнює дані, мінімально помиляється при розпізнаванні фішингу;
+
+• Logistic Regression і CNN демонструють високі результати, але поступаються трансформеру у стабільності прогнозів;
+
+Усі моделі правильно розпізнають фішинг — але:
+| Модель               | Confidence (приблизно по прикладу) |
+| -------------------- | :--------------------------------: |
+| Logistic Regression  |                ~91%                |
+| Text CNN             |                ~98%                |
+| **BERT Transformer** |                ~99%                |
+
+<img width="1085" height="742" alt="image" src="https://github.com/user-attachments/assets/5ef79cdd-4148-4722-b2e8-24093232b28c" />
+<img width="1108" height="757" alt="image" src="https://github.com/user-attachments/assets/eceb00d7-2c33-41a5-bb3e-323e57b7e592" />
+<img width="1097" height="754" alt="image" src="https://github.com/user-attachments/assets/069cdbf1-bc25-4e50-9dbe-3fe039ea27ba" />
+<img width="1098" height="736" alt="image" src="https://github.com/user-attachments/assets/b9674c99-88cb-4bc9-9689-8bf85ffc998b" />
+<img width="1119" height="762" alt="image" src="https://github.com/user-attachments/assets/ba538a53-fd97-4009-a288-92040b7e3763" />
+<img width="1108" height="759" alt="image" src="https://github.com/user-attachments/assets/5f0510b0-49fc-43bd-8108-951e8aac4892" />
+
+## Висновки 
+Система успішно визначає фішингові листи за текстом повідомлення. Серед трьох протестованих моделей найкращий результат показав BERT, Text CNN забезпечив хорошу якість при меншій складності, а Logistic Regression підходить як базове швидке рішення. Створений графічний інтерфейс дає можливість легко перевіряти підозрений текст і отримувати результат у реальному часі.
+
+
 
 
 
